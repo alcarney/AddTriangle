@@ -22,21 +22,24 @@ class AddTriangle(bpy.types.Operator):
         """
         Here is where the magic happens
         """
-        print("Running!")
         # Get some info about the scene from the context
         scene = context.scene
         cursor_location = scene.cursor_location
         
-        # Create a mesh and attach it to an object and link
-        # it to the scene
+        # Create a mesh and attach it to an object
         mesh = bpy.data.meshes.new('TriangleMesh')
         obj = bpy.data.objects.new('Triangle', mesh)
+
+        # Set the location of the object to be the 3D cursor
+        # and link it to the scene
+        obj.location = cursor_location
         scene.objects.link(obj)
+
+        # Select the object
+        obj.select = True
         
         # Construct the mesh data
-        x, y, z = cursor_location
-        
-        verts = [(x - 0.5, y, z), (x + 0.5, y, z), (x, y + 1, z)]
+        verts = [(-0.5, 0, 0), (0.5, 0, 0), (0, 1, 0)]
         faces = [(0,1,2)]
         
         # Calculate the mesh from the data
