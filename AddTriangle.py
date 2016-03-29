@@ -59,7 +59,7 @@ class AddTriangle(bpy.types.Operator):
 def add_triangle(self, context):
     """
     This function creates a menu item for us to add to the add mesh menu
-    for someone to add a square to the scene.
+    for someone to add a triangle to the scene.
     """
     self.layout.operator(AddTriangle.bl_idname)
 
