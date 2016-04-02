@@ -73,6 +73,7 @@ def register():
     
 def unregister():
     bpy.utils.unregister_class(AddTriangle)
+    bpy.types.INFO_MT_mesh_add.remove(add_triangle)
     
 if __name__ == '__main__':
     register()
