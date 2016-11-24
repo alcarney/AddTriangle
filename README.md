@@ -1,7 +1,7 @@
 # AddTriangle
 
 This is a simple example of using the Blender Python API to create an
-addon. This addon consists of two parts.
+addon. This addon is made up of two parts.
 
 - A class, which defines an operator which creates a triangle mesh and
   adds it to the current scene.
